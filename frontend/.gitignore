@@ -1,0 +1,38 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-debug.log*
+
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# Caching
+.cache/
+.parcel-cache/
+.vite/
+
+# Production
+/dist
+/build
+
+# Build outputs
+*.tgz
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Editor directories and files
+.idea
+.vscode/*
+!.vscode/extensions.json
+.DS_Store
+npm-debug.log
+yarn-debug.log
+yarn-error.log
