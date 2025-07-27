@@ -1,0 +1,219 @@
+/* frontend/src/styles/themes.css */
+
+/*
+   Base CSS Variables for Light Mode (Default)
+   เมื่อไม่มี class 'dark-mode' บน body, ค่าเหล่านี้จะถูกใช้
+*/
+:root {
+  --bg-color-primary: #ffffff;
+  /* พื้นหลังหลัก */
+  --bg-color-secondary: #f8f9fa;
+  /* พื้นหลังรอง, เช่น Navbar, Card Header */
+  --text-color-primary: #212529;
+  /* สีข้อความหลัก (เทียบเท่า Bootstrap default) */
+  --text-color-secondary: #6c757d;
+  /* สีข้อความรอง */
+  --border-color: #dee2e6;
+  /* สีเส้นขอบ */
+  --link-color: #007bff;
+  /* สีลิงก์ */
+  --link-hover-color: #0056b3;
+  /* สีลิงก์เมื่อ hover */
+  --card-bg: #ffffff;
+  /* สีพื้นหลัง Card */
+  --input-bg: #ffffff;
+  /* สีพื้นหลัง Input */
+  --input-border: #ced4da;
+  /* สีขอบ Input */
+
+  /* Bootstrap Specific Colors (Optional: If you want to override Bootstrap's default primary/success/danger) */
+  --bs-primary: #007bff;
+  --bs-primary-rgb: 0, 123, 255;
+  --bs-dark: #343a40;
+  /* Navbar dark default */
+}
+
+/*
+   Dark Mode Styles
+   เมื่อ body มี class 'dark-mode', ค่าเหล่านี้จะถูกใช้และ override ค่า default
+*/
+body.dark-mode {
+  --bg-color-primary: #121212;
+  /* พื้นหลังหลักสำหรับ Dark Mode */
+  --bg-color-secondary: #1e1e1e;
+  /* พื้นหลังรองสำหรับ Dark Mode */
+  --text-color-primary: #e0e0e0;
+  /* สีข้อความหลักสำหรับ Dark Mode */
+  --text-color-secondary: #b0b0b0;
+  /* สีข้อความรองสำหรับ Dark Mode */
+  --border-color: #3a3a3a;
+  /* สีเส้นขอบสำหรับ Dark Mode */
+  --link-color: #90caf9;
+  /* สีลิงก์สำหรับ Dark Mode */
+  --link-hover-color: #a6d4fa;
+  /* สีลิงก์เมื่อ hover สำหรับ Dark Mode */
+  --card-bg: #696666;
+  /* สีพื้นหลัง Card สำหรับ Dark Mode */
+  --input-bg: #3a3a3a;
+  /* สีพื้นหลัง Input สำหรับ Dark Mode */
+  --input-border: #555555;
+  /* สีขอบ Input สำหรับ Dark Mode */
+
+  --bs-primary: #6c757d;
+  /* ตัวอย่างการเปลี่ยนสี primary ของ Bootstrap ใน dark mode */
+  --bs-primary-rgb: 108, 117, 125;
+  --bs-dark: #212529;
+  /* Navbar dark ใน dark mode (ให้เข้มขึ้นถ้าต้องการ) */
+}
+
+
+/* ------------------------------------------------------------- */
+/* Apply CSS Variables to HTML Elements              */
+/* ------------------------------------------------------------- */
+
+/* Global Body Styles */
+body {
+  background-color: var(--bg-color-primary) !important;
+  color: var(--text-color-primary) !important;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Links */
+a {
+  color: var(--link-color);
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--link-hover-color);
+}
+
+
+/* ------------------------------------------------------------- */
+/* Apply CSS Variables to Bootstrap Classes           */
+/* ------------------------------------------------------------- */
+
+/* Navbar */
+/* ใช้ Selector ที่จำเพาะเจาะจงพอที่จะ Override Bootstrap */
+/* ในกรณีของ Navbar ที่มี class 'navbar-dark bg-dark' เราต้องระบุให้ชัดเจน */
+.navbar.bg-dark {
+  background-color: var(--bg-color-secondary) !important;
+  /* ใช้ !important เพื่อ override Bootstrap's default */
+  border-bottom: 1px solid var(--border-color);
+  /* เพิ่มเส้นขอบถ้าต้องการ */
+}
+
+.navbar-brand,
+.navbar-nav .nav-link {
+  color: var(--text-color-primary) !important;
+  /* ให้ข้อความ Navbar ใช้สีหลักของธีม */
+}
+
+/* Cards */
+.card {
+  background-color: var(--card-bg) !important;
+  color: var(--text-color-primary) !important;
+  border-color: var(--border-color) !important;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.card-header {
+  background-color: var(--bg-color-secondary) !important;
+  color: var(--text-color-primary) !important;
+  border-bottom-color: var(--border-color) !important;
+}
+
+/* Forms - Inputs */
+.form-control {
+  background-color: var(--input-bg) !important;
+  color: var(--text-color-primary) !important;
+  border-color: var(--input-border) !important;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.form-control::placeholder {
+  color: var(--text-color-secondary);
+  opacity: 0.7;
+  /* เพื่อให้เห็นชัดใน dark mode */
+}
+
+.form-control:focus {
+  background-color: var(--input-bg) !important;
+  color: var(--text-color-primary) !important;
+  border-color: var(--link-color) !important;
+  box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), .25) !important;
+}
+
+/* Alerts */
+.alert {
+  background-color: var(--bg-color-secondary) !important;
+  color: var(--text-color-primary) !important;
+  border-color: var(--border-color) !important;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* หากคุณต้องการให้ alert มีสีเฉพาะเจาะจงมากขึ้นใน dark mode */
+.alert-danger {
+  background-color: #721c24;
+  /*Bootstrap's original danger bg*/
+  border-color: #f5c6cb;
+  /* Bootstrap's original danger border */
+  color: #f8d7da;
+  /* Bootstrap's original danger text */
+}
+
+body.dark-mode .alert-danger {
+  /* Override danger alert for dark mode */
+  background-color: #5a1219;
+  /* A darker red */
+  border-color: #7d2a33;
+  color: #ffcccc;
+}
+
+
+/* Optional: If you use text utility classes */
+.bg-light {
+  background-color: var(--bg-color-secondary) !important;
+}
+
+.bg-white {
+  background-color: var(--bg-color-primary) !important;
+}
+
+.text-dark {
+  color: var(--text-color-primary) !important;
+}
+
+.text-muted {
+  color: var(--text-color-secondary) !important;
+}
+
+
+/* ------------------------------------------------------------- */
+/* Additional CSS to ensure all components inherit theme colors */
+/* ------------------------------------------------------------- */
+
+/* For any custom sections or pages, ensure they pick up colors */
+.container {
+  color: var(--text-color-primary) !important;
+  background-color: var(--bg-color-primary) !important;
+}
+
+/* Page wrapper */
+.page-wrapper {
+  background-color: var(--bg-color-primary) !important;
+  color: var(--text-color-primary) !important;
+}
+
+.row,
+.col {
+  color: inherit;
+  /* Inherit text color from body */
+}
+
+/* If you have specific wrapper divs for pages, give them a class */
+.page-wrapper {
+  /* Example: <div className="page-wrapper">...</div> on each page */
+  background-color: var(--bg-color-primary);
+  color: var(--text-color-primary);
+}

@@ -82,8 +82,6 @@ const RegisterPage = () => {
                                     >
                                         <option value="customer">Customer</option>
                                         <option value="seller">Seller</option>
-                                        {/* รอแก้เพิ่ม role admin */}
-                                        {/* <option value="admin">admin</option> */}
                                     </select>
                                 </div>
                                 <button type="submit" className="btn btn-success w-100">Register</button>
