@@ -77,11 +77,11 @@ const Navbar = ({ isAuthenticated, userRole, onLogout }) => {
                 {/* แสดงไอคอนและข้อความตามโหมดปัจจุบัน */}
                 {theme === 'light' ? (
                   <>
-                    <i className="bi bi-moon-stars-fill"> Dark</i> 
+                    <i class="bi bi-moon-fill"></i> 
                   </>
                 ) : (
                   <>
-                    <i className="bi bi-moon-stars-fill"> Light</i> 
+                    <i class="bi bi-brightness-high-fill"></i> 
                   </>
                 )}
               </button>

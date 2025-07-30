@@ -7,7 +7,7 @@
 :root {
   --bg-color-primary: #ffffff;
   /* พื้นหลังหลัก */
-  --bg-color-secondary: #f8f9fa;
+  --bg-color-secondary: #6c757d;
   /* พื้นหลังรอง, เช่น Navbar, Card Header */
   --text-color-primary: #212529;
   /* สีข้อความหลัก (เทียบเท่า Bootstrap default) */
