@@ -111,8 +111,8 @@ exports.updateProduct = async (req, res) => {
         if (!product) {
             return res.status(404).json({ message: 'Product not found' });
         }
-
-        if (product.seller_id !== seller_id) {
+        //แก้ตรงนี้ให้ admin สามารถอัพเดทได้ ใส่ && req.user.role !== 'admin'
+        if (product.seller_id !== seller_id && req.user.role !== 'admin') {
             return res.status(403).json({ message: 'Not authorized to update this product' });
         }
 
@@ -146,8 +146,8 @@ exports.deleteProduct = async (req, res) => {
         if (!product) {
             return res.status(404).json({ message: 'Product not found' });
         }
-
-        if (product.seller_id !== seller_id) {
+        //แก้ตรงนี้ให้ admin สามารถอัพเดทได้
+        if (product.seller_id !== seller_id && req.user.role !== 'admin')  {
             return res.status(403).json({ message: 'Not authorized to delete this product' });
         }
 

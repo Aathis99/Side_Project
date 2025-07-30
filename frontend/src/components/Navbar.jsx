@@ -36,7 +36,7 @@ const Navbar = ({ isAuthenticated, userRole, onLogout }) => {
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
               <Link className="nav-link" to="/search-products">
-                ค้นหาสินค้า
+                สินค้า
               </Link>
             </li>
 
